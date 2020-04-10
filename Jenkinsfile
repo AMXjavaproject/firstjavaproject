@@ -11,17 +11,17 @@ pipeline {
     }
     stages {    
          /* checkout repo */           
-        stage('Checkout SCM') {
-            steps {
-                checkout([
-                 $class: 'GitSCM',
-                 branches: [[name: 'master']],
-                 userRemoteConfigs: [[
-                    url: 'https://github.com/Gouravjoshi05/javaproject.git',
-                 ]]
-                ])
-            }
-        }
+//        stage('Checkout SCM') {
+  //          steps {
+    //            checkout([
+      //           $class: 'GitSCM',
+        //         branches: [[name: 'master']],
+          //       userRemoteConfigs: [[
+            //        url: 'https://github.com/Gouravjoshi05/javaproject.git',
+              //   ]]
+                //])
+           // }
+       // }
          stage('Compile') {
             steps {
                 sh 'javac -d  bin/ src/*.java'
