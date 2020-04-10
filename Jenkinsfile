@@ -11,31 +11,17 @@ pipeline {
     }
     stages {    
          /* checkout repo */           
-<<<<<<< HEAD
-//        stage('Checkout SCM') {
-  //          steps {
-    //            checkout([
-      //           $class: 'GitSCM',
-        //         branches: [[name: 'master']],
-          //       userRemoteConfigs: [[
-            //        url: 'https://github.com/Gouravjoshi05/javaproject.git',
-              //   ]]
-                //])
+       // stage('Checkout SCM') {
+         //   steps {
+           //     checkout([
+             //    $class: 'GitSCM',
+               //  branches: [[name: 'master']],
+                 //userRemoteConfigs: [[
+                   // url: 'https://github.com/AMXjavaproject/firstjavaproject.git',
+               //  ]]
+               // ])
            // }
        // }
-=======
-        stage('Checkout SCM') {
-            steps {
-                checkout([
-                 $class: 'GitSCM',
-                 branches: [[name: 'master']],
-                 userRemoteConfigs: [[
-                    url: 'https://github.com/AMXjavaproject/firstjavaproject.git',
-                 ]]
-                ])
-            }
-        }
->>>>>>> b44bb6231d50ab3677a845c7b2f0fab84467c010
          stage('Compile') {
             steps {
                 sh 'javac -d  bin/ src/*.java'
