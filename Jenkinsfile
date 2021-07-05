@@ -5,7 +5,7 @@ pipeline {
     agent any
 	parameters {
         string (
-			name: 'PATH',
+	    name: 'PATH',
             defaultValue: 'artifacts',
             description: 'Please left as default or pass a remote directory.')
     }
@@ -43,7 +43,7 @@ pipeline {
                         verbose: true,
                         transfers: [
                             sshTransfer(sourceFiles: "**/Library.jar"),
-				sshTransfer(execCommand: "mkdir -p ${params.PATH}/${currentTime} ; mv bin/Library.jar ${params.PATH}/${currentTime} ; rm -rf bin ")
+				sshTransfer(execCommand: "mkdir -p $PATH/$currentTime ; mv bin/Library.jar $PATH/$currentTime ; rm -rf bin ")
                         ]
                     )
                 ]
